@@ -1,2 +1,2 @@
 # cub3d
-42 project: cub3d
+Mon premier RayCaster avec la minilibX
