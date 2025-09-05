@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils_img.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gburtin <gburtin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 14:34:21 by gburtin           #+#    #+#             */
-/*   Updated: 2025/08/07 11:57:46 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:12:02 by gburtin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	get_texture_color(t_image *texture, int x, int y, int type)
 {
 	if (type == WALL)
 	{
-		if (x < 0 || y < 0 || x >= WALL_TEX_WIDTH || y >= WALL_TEX_HEIGHT)
+		if (x < 0 || y < 0 || x >= texture->width || y >= texture->height)
 			return (0);
 		return (*(int *)(texture->image->data + pix_index(texture, x, y)));
 	}
