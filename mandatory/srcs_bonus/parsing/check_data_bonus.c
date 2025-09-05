@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   check_data_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gburtin <gburtin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 20:07:59 by gburtin           #+#    #+#             */
-/*   Updated: 2025/08/18 19:14:52 by gburtin          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:18:33 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 static bool	check_order(char **tab)
 {

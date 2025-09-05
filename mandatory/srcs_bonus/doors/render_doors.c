@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_doors.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gburtin <gburtin@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 20:09:14 by gburtin           #+#    #+#             */
-/*   Updated: 2025/08/21 15:45:05 by gburtin          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:24:42 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int	get_door_texture_index(t_data *data, int map_x, int map_y)
 	return (0);
 }
 
-bool	should_ray_continue_through_door(t_data *data, t_ray *ray, int x)
+bool	should_ray_pass_through_door(t_data *data, t_ray *ray, int x)
 {
 	int		door_texture_index;
 	int		color;

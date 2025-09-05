@@ -6,11 +6,11 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:33:39 by mivogel           #+#    #+#             */
-/*   Updated: 2025/08/07 16:23:57 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:18:33 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "cub3d_bonus.h"
 
 bool	check_texture(char **tab, char *id)
 {

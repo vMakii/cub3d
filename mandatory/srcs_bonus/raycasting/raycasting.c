@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 17:12:28 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/02 12:51:49 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:24:47 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static void	dda_algorithm(t_data *data, t_ray *ray, int x)
 			ray->hit = 1;
 		else if (data->map[ray->map.y][ray->map.x] == DOOR)
 		{
-			if (!should_ray_continue_through_door(data, ray, x))
+			if (!should_ray_pass_through_door(data, ray, x))
 				break ;
 		}
 	}
