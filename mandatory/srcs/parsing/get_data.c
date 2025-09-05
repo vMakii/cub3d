@@ -6,7 +6,7 @@
 /*   By: gburtin <gburtin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 19:59:00 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/05 10:55:21 by gburtin          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:47:09 by gburtin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,38 +78,46 @@ static bool	get_texture_2(t_data *data, char **texture, char *str)
 	return (false);
 }
 
-static bool	get_textures(t_data *data)
+static bool	get_textures(t_data *data, int i)
+{
+	if ((!ft_strncmp(data->file.tab[i], "NO", 2) && data->file.tab[i][2] == ' ')
+		|| (!ft_strncmp(data->file.tab[i], "N", 1)
+		&& data->file.tab[i][1] == ' '))
+		if (get_texture_2(data, &data->texture.north_texture,
+				data->file.tab[i]) == false)
+			return (false);
+	if ((!ft_strncmp(data->file.tab[i], "SO", 2) && data->file.tab[i][2] == ' ')
+		|| (!ft_strncmp(data->file.tab[i], "S", 1)
+		&& data->file.tab[i][1] == ' '))
+		if (get_texture_2(data, &data->texture.south_texture,
+				data->file.tab[i]) == false)
+			return (false);
+	if ((!ft_strncmp(data->file.tab[i], "WE", 2) && data->file.tab[i][2] == ' ')
+		|| (!ft_strncmp(data->file.tab[i], "W", 1)
+		&& data->file.tab[i][1] == ' '))
+		if (get_texture_2(data, &data->texture.west_texture,
+				data->file.tab[i]) == false)
+			return (false);
+	if ((!ft_strncmp(data->file.tab[i], "EA", 2) && data->file.tab[i][2] == ' ')
+		|| (!ft_strncmp(data->file.tab[i], "E", 1)
+		&& data->file.tab[i][1] == ' '))
+		if (get_texture_2(data, &data->texture.east_texture,
+				data->file.tab[i]) == false)
+			return (false);
+	return (true);
+}
+
+bool	get_data(t_data *data)
 {
 	int	i;
 
 	i = 0;
 	while (data->file.tab[i])
 	{
-		if (!ft_strncmp(data->file.tab[i], "NO", 2))
-			if (get_texture_2(data, &data->texture.north_texture,
-					data->file.tab[i]) == false)
-				return (false);
-		if (!ft_strncmp(data->file.tab[i], "SO", 2))
-			if (get_texture_2(data, &data->texture.south_texture,
-					data->file.tab[i]) == false)
-				return (false);
-		if (!ft_strncmp(data->file.tab[i], "WE", 2))
-			if (get_texture_2(data, &data->texture.west_texture,
-					data->file.tab[i]) == false)
-				return (false);
-		if (!ft_strncmp(data->file.tab[i], "EA", 2))
-			if (get_texture_2(data, &data->texture.east_texture,
-					data->file.tab[i]) == false)
-				return (false);
+		if (get_textures(data, i) == false)
+			return (false);
 		i++;
 	}
-	return (true);
-}
-
-bool	get_data(t_data *data)
-{
-	if (get_textures(data) == false)
-		return (false);
 	if (!data->texture.north_texture || !data->texture.south_texture
 		|| !data->texture.west_texture || !data->texture.east_texture)
 		return (false);
