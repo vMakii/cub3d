@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_data_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gburtin <gburtin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:33:39 by mivogel           #+#    #+#             */
-/*   Updated: 2025/08/05 17:05:36 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:45:33 by gburtin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,15 @@ bool	check_texture(char **tab, char *id)
 
 	count = 0;
 	i = 0;
-	while (tab[i] && ft_strlen(tab[i]) >= 3)
+	while (tab[i] && ft_strlen(tab[i]) >= 2)
 	{
 		if (!ft_strncmp(tab[i], id, 2) && tab[i][2] == ' ')
+		{
+			if (ft_count_word(tab[i], ' ') != 2)
+				return (false);
+			count++;
+		}
+		else if (!ft_strncmp(tab[i], id, 1) && tab[i][1] == ' ')
 		{
 			if (ft_count_word(tab[i], ' ') != 2)
 				return (false);
@@ -60,6 +66,9 @@ static int	check_colors_2(char *str)
 	j = 1;
 	while (str[j])
 	{
+		if (j == (int)ft_strlen(str) - 1)
+			if (!ft_isdigit(str[j]))
+				return (0);
 		if (str[j] != ' ' && !ft_isdigit(str[j]) && str[j] != ',')
 			return (0);
 		if (ft_isdigit(str[j]) && (j == 0 || !ft_isdigit(str[j - 1])))

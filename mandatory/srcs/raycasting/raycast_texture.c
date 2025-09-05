@@ -6,13 +6,13 @@
 /*   By: gburtin <gburtin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 20:04:32 by gburtin           #+#    #+#             */
-/*   Updated: 2025/08/06 20:31:17 by gburtin          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:12:15 by gburtin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-// texPos starts at offset of the top of the wall (how many pixels of texture 
+// texPos starts at offset of the top of the wall (how many pixels of texture
 // (with the texStep ratio) above the center of the screen)
 void	get_texture_column(t_data *data)
 {
@@ -50,8 +50,8 @@ void	draw_wall_texture(t_data *data, int x, t_image texture)
 	{
 		data->ray.tex_y = (int)data->ray.tex_pos % WALL_TEX_HEIGHT;
 		data->ray.tex_pos += data->ray.tex_step;
-		color = get_texture_color(&texture,
-				data->ray.tex_x, data->ray.tex_y, WALL);
+		color = get_texture_color(&texture, data->ray.tex_x, data->ray.tex_y,
+				WALL);
 		img_pix_put(&data->frame, x, y, color);
 		y++;
 	}

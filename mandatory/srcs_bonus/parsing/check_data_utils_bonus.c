@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_data_utils_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
+/*   By: gburtin <gburtin@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 12:33:39 by mivogel           #+#    #+#             */
-/*   Updated: 2025/09/05 14:18:33 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:48:36 by gburtin          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,9 @@ static int	check_colors_2(char *str)
 	j = 1;
 	while (str[j])
 	{
+		if (j == (int)ft_strlen(str) - 1)
+			if (!ft_isdigit(str[j]))
+				return (0);
 		if (str[j] != ' ' && !ft_isdigit(str[j]) && str[j] != ',')
 			return (0);
 		if (ft_isdigit(str[j]) && (j == 0 || !ft_isdigit(str[j - 1])))
