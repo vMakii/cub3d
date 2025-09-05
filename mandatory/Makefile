@@ -6,7 +6,7 @@
 #    By: gburtin <gburtin@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 10:47:43 by mivogel           #+#    #+#              #
-#    Updated: 2025/08/30 21:39:13 by gburtin          ###   ########.fr        #
+#    Updated: 2025/09/05 14:51:03 by gburtin          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,9 +40,9 @@ OBJS_PATH = ./objs/
 OBJS_BONUS = ${patsubst %.c, ${OBJS_BONUS_PATH}/%.o, ${SRCS_BONUS}}
 OBJS_BONUS_PATH = ./objs_bonus/
 
-CC = gcc
+CC = cc
 CFLAGS += -g3 -O2 #-flto -ffast-math -march=native -pipe
-CFLAGS += -fno-pie -no-pie
+#CFLAGS += -fno-pie -no-pie
 CFLAGS += -Wall -Wextra -Werror
 
 NAME = cub3D
