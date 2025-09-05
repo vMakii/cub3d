@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:27:13 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/05 14:37:30 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/05 14:47:28 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,27 @@
 extern int							g_frame_count;
 
 // ============================================================================
+// FORWARD DECLARATIONS
+// ============================================================================
+
+typedef struct s_data				t_data;
+typedef struct s_door				t_door;
+typedef struct s_door_list			t_door_list;
+typedef struct s_sprite				t_sprite;
+typedef struct s_ray				t_ray;
+typedef struct s_player				t_player;
+typedef struct s_texture			t_texture;
+typedef struct s_image				t_image;
+typedef struct s_key				t_key;
+typedef struct s_minimap			t_minimap;
+typedef struct s_time				t_time;
+typedef struct s_file				t_file;
+typedef struct s_garbage			t_garbage;
+typedef struct s_rect				t_rect;
+typedef struct s_starting_screen	t_starting_screen;
+typedef struct s_enemy				t_enemy;
+
+// ============================================================================
 // BASIC TYPES AND COORDINATES
 // ============================================================================
 
@@ -121,26 +142,35 @@ typedef struct s_mlx
 }									t_mlx;
 
 // ============================================================================
-// FORWARD DECLARATIONS
+// DOORS
 // ============================================================================
 
-typedef struct s_data				t_data;
-typedef struct s_door				t_door;
-typedef struct s_door_list			t_door_list;
-typedef struct s_sprite				t_sprite;
-typedef struct s_ray				t_ray;
-typedef struct s_player				t_player;
-typedef struct s_texture			t_texture;
-typedef struct s_image				t_image;
-typedef struct s_key				t_key;
-typedef struct s_minimap			t_minimap;
-typedef struct s_time				t_time;
-typedef struct s_file				t_file;
-typedef struct s_garbage			t_garbage;
-typedef struct s_rect				t_rect;
-typedef struct s_starting_screen	t_starting_screen;
-typedef struct s_enemy				t_enemy;
+typedef struct s_door
+{
+	t_coord_int						pos;
+	bool							is_open;
+	float							open_amount;
+	float							open_speed;
+	int								sprite_index;
+}									t_door;
 
+typedef struct s_door_list
+{
+	t_door							*doors;
+	int								count;
+	int								capacity;
+}									t_door_list;
+
+void								update_doors(t_data *data);
+void								get_doors_from_map(t_data *data);
+void								interact_with_door(t_data *data);
+bool								is_door_blocking(t_data *data, int map_x,
+										int map_y);
+int									get_door_texture_index(t_data *data,
+										int map_x, int map_y);
+bool								should_ray_pass_through_door(t_data *data,
+										t_ray *ray, int x);
+										
 // ============================================================================
 // PARSING STRUCTURES
 // ============================================================================
@@ -382,25 +412,6 @@ typedef struct s_enemies_on_map
 	t_rect							rect;
 }									t_enemies_on_map;
 
-// ============================================================================
-// DOOR SYSTEM STRUCTURES
-// ============================================================================
-
-typedef struct s_door
-{
-	t_coord_int						pos;
-	bool							is_open;
-	float							open_amount;
-	float							open_speed;
-	int								sprite_index;
-}									t_door;
-
-typedef struct s_door_list
-{
-	t_door							*doors;
-	int								count;
-	int								capacity;
-}									t_door_list;
 
 // ============================================================================
 // RAYCASTING STRUCTURES
@@ -789,20 +800,6 @@ void								img_pix_put(t_image *img, int x, int y,
 										int color);
 void								upscale_img(t_data *data, t_image *sprite,
 										int dest_x, int dest_y);
-
-// ============================================================================
-// DOOR SYSTEM FUNCTIONS
-// ============================================================================
-
-void								update_doors(t_data *data);
-void								get_doors_from_map(t_data *data);
-void								interact_with_door(t_data *data);
-bool								is_door_blocking(t_data *data, int map_x,
-										int map_y);
-int									get_door_texture_index(t_data *data,
-										int map_x, int map_y);
-bool								should_ray_pass_through_door(t_data *data,
-										t_ray *ray, int x);
 
 // ============================================================================
 // INPUT HANDLING FUNCTIONS
