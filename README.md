@@ -6,6 +6,7 @@ FIX:
 
 Roadmap:
 - keybinds print
+- fluid animation based on time and not fps
 - headbobbing
 - mana and stamina logic and bars on screen
 - change map def:
