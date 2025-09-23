@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/06 14:44:08 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/23 11:14:11 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/23 13:25:30 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,9 @@ int	handle_mouse(int button, int x, int y, t_data *data)
 	(void)y;
 	if (button == 1 && data->player.action != ATTACKING)
 		data->player.action = ATTACKING;
+	if (button == 4)
+		change_weapons_up(data);
+	if (button == 5)
+		change_weapons_down(data);
 	return (0);
 }

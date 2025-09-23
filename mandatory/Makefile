@@ -6,7 +6,7 @@
 #    By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 10:47:43 by mivogel           #+#    #+#              #
-#    Updated: 2025/09/23 11:40:13 by mivogel          ###   ########.fr        #
+#    Updated: 2025/09/23 13:55:15 by mivogel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,14 @@ INC := $(addprefix -I, $(INC_CORE))
 LIBS = -L libft -lft
 
 MLX = mlx/libmlx.a
-MLX_FLAGS = -Lmlx -lmlx -lX11 -lXext -lm -lGL
+MLX_FLAGS = -Lmlx -lmlx -lX11 -lXext -lm -lGL -lXfixes
 
 OBJS = ${patsubst %.c, ${OBJS_PATH}/%.o, ${SRCS}}
 OBJS_PATH = ./objs/
 
 CC = cc
-CFLAGS += -g3 -O2
-#CFLAGS += -flto -ffast-math -march=native -pipe -fno-pie -no-pie
+CFLAGS += -O2
+CFLAGS += -flto -ffast-math -march=native -pipe -fno-pie
 CFLAGS += -Wall -Wextra -Werror
 
 NAME = cub3D
@@ -83,10 +83,10 @@ keybinds:
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Strafe right:        D\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Turn left:           Left Arrow or Mouse\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Turn right:          Right Arrow or Mouse\n"$(NC)
-	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Attack / Cast spell: Space or Right Mouse Button\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Attack:              Space or Right Mouse Button\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Change weapon:       Mouse Wheel Up/Down\n"$(NC)
-	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Toggle HUD:          H\n"$(NC)
-	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Toggle FPS counter:  F\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Open doors:          F\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Cast spell:          E\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Exit game:           ESC or Close Window\n"$(NC)
 
 assets:

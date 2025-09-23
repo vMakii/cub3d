@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:27:13 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/23 11:02:09 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/23 13:37:48 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,8 @@
 # define MARGIN 0.1f
 
 # define INTERACTION_DISTANCE 1.0f
+
+# define WEAPONS_COUNT 3
 
 extern int							g_frame_count;
 
@@ -745,7 +747,8 @@ void								render_player_attacking(t_data *data,
 void								render_player_casting(t_data *data);
 void								render_spell_effect(t_data *data);
 void								render_player_magick(t_data *data);
-void								change_weapons(t_data *data);
+void								change_weapons_up(t_data *data);
+void								change_weapons_down(t_data *data);
 void								init_weapons(t_data *data);
 void								combat_player(t_data *data);
 

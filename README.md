@@ -1,7 +1,10 @@
 # cub3d
 Mon premier RayCaster avec la minilibX
 
-Roadmap: 
+FIX:
+- ennemies movement (they sometimes go back instead of going toward the player, especially zombies)
+
+Roadmap:
 - keybinds print
 - headbobbing
 - mana and stamina logic and bars on screen
