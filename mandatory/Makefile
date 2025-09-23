@@ -6,7 +6,7 @@
 #    By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 10:47:43 by mivogel           #+#    #+#              #
-#    Updated: 2025/09/23 11:18:57 by mivogel          ###   ########.fr        #
+#    Updated: 2025/09/23 11:40:13 by mivogel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -74,6 +74,20 @@ all: ${NAME}
 game: ${NAME}
 	@	echo -ne "\r\033[2K" $(LIGHTBLUE) "→ Running a test map\n"$(NC)
 	@	./${NAME} maps/church.cub
+
+keybinds:
+	@	echo -ne "\r\033[2K" $(LIGHTBLUE) "→ Keybinds:\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Move forward:        W\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Move backward:       S\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Strafe left:         A\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Strafe right:        D\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Turn left:           Left Arrow or Mouse\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Turn right:          Right Arrow or Mouse\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Attack / Cast spell: Space or Right Mouse Button\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Change weapon:       Mouse Wheel Up/Down\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Toggle HUD:          H\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Toggle FPS counter:  F\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Exit game:           ESC or Close Window\n"$(NC)
 
 assets:
 	@	echo -ne "\r\033[2K" $(LIGHTBLUE) "→ Downloading assets...\n"$(NC)
