@@ -6,7 +6,8 @@ FIX:
 
 Roadmap:
 - fluid animation based on time and not fps
-- rethink the whole time struct and frame gestion
+    * rethink the whole time struct and how its updated
+    * still lots of animation depends on it (frametime particularly)
 - headbobbing
 - mana and stamina logic and bars on screen
 - change map def:
