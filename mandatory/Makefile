@@ -6,7 +6,7 @@
 #    By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/07/16 10:47:43 by mivogel           #+#    #+#              #
-#    Updated: 2025/09/24 18:12:37 by mivogel          ###   ########.fr        #
+#    Updated: 2025/09/25 10:57:38 by mivogel          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ OBJS_PATH = ./objs/
 
 CC = cc
 CFLAGS += -O2
-CFLAGS += -flto -ffast-math -march=native -pipe -fno-pie -no-pie
+CFLAGS += -flto -ffast-math -march=native -pipe -fno-pie #-no-pie
 CFLAGS += -Wall -Wextra -Werror
 
 NAME = cub3D
@@ -83,7 +83,7 @@ keybinds:
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Strafe right:        D\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Turn left:           Left Arrow or Mouse\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Turn right:          Right Arrow or Mouse\n"$(NC)
-	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Attack:              Space or Right Mouse Button\n"$(NC)
+	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Attack:              Space or Left Mouse Button\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Change weapon:       Mouse Wheel Up/Down\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Open doors:          F\n"$(NC)
 	@	echo -ne "\r\033[2K" $(LIGHTCYAN) "   Cast spell:          E\n"$(NC)

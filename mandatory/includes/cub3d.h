@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:27:13 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/23 13:37:48 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/25 11:13:16 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,16 @@
 # define RUN_SPEED 0.08f
 # define MARGIN 0.1f
 
+# define WALK_CYCLE_DURATION 0.8f  // Durée totale du cycle
+# define WALK_FRAMES 4             // Nombre de frames d'animation
+# define FRAME_DURATION (WALK_CYCLE_DURATION / WALK_FRAMES)  // 0.2s par frame
+
+# define RUN_CYCLE_DURATION 0.6f  // Durée totale du cycle
+# define RUN_FRAMES 4             // Nombre de frames d'animation
+# define RUN_FRAME_DURATION (RUN_CYCLE_DURATION / RUN_FRAMES)  // 0.15s par frame
+
 # define INTERACTION_DISTANCE 1.0f
 
-# define WEAPONS_COUNT 3
 
 extern int							g_frame_count;
 

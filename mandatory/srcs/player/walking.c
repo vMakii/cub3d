@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 11:16:54 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/23 11:14:11 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/25 11:11:14 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ static void	walking_animation_2(t_data *data, int walk_cycle)
 	}
 }
 
-static void	walking_animation_1(t_data *data, double elapsed_time)
+static void	walking_animation_1(t_data *data, double cycle_time)
 {
 	int	walk_cycle;
 
-	walk_cycle = (int)(elapsed_time / 0.2) % 4;
+	walk_cycle = (int)(cycle_time / FRAME_DURATION);
 	if (walk_cycle == 0)
 	{
 		upscale_img(data, &data->texture.player_right1, WIN_WIDTH
@@ -60,11 +60,14 @@ static void	walking_animation_1(t_data *data, double elapsed_time)
 // 60 frames for a full cycle
 void	render_player_walking(t_data *data, double current_time)
 {
-	static double	walking_start_time = 0;
+	static double	walking_start_time = -1.0;
 	double			elapsed_time;
+	double			cycle_time;
 
-	if (walking_start_time > 5.0)
+	if (walking_start_time < 0)
 		walking_start_time = current_time;
 	elapsed_time = current_time - walking_start_time;
-	walking_animation_1(data, elapsed_time);
+	// Utilisation de fmod pour un cycle continu
+	cycle_time = fmod(elapsed_time, WALK_CYCLE_DURATION);
+	walking_animation_1(data, cycle_time);
 }
