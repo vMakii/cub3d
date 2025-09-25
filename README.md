@@ -5,8 +5,8 @@ FIX:
 - ennemies movement (they sometimes go back instead of going toward the player, especially zombies)
 
 Roadmap:
-- keybinds print
 - fluid animation based on time and not fps
+- rethink the whole time struct and frame gestion
 - headbobbing
 - mana and stamina logic and bars on screen
 - change map def:

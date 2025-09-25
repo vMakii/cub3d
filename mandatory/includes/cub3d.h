@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:27:13 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/25 14:27:12 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/25 14:50:07 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -338,10 +338,10 @@ typedef struct s_rect
 typedef struct s_fps
 {
 	float							current_time;
-	// float							total_time;
-	// float							frame_times[60];
-	// int								frame_index;
-	// int								frames_counted;
+	float							total_time;
+	float							frame_times[60];
+	int								frame_index;
+	int								frames_counted;
 }									t_fps;
 
 typedef struct s_time
