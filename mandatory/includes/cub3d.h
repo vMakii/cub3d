@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:27:13 by gburtin           #+#    #+#             */
-/*   Updated: 2025/10/06 15:17:26 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/10/06 17:32:19 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -751,7 +751,7 @@ void								render_player_running(t_data *data,
 										double current_time);
 void								render_player_attacking(t_data *data,
 										double current_time);
-void								render_player_casting(t_data *data);
+void								render_player_casting(t_data *data, double current_time);
 void								render_spell_effect(t_data *data);
 void								render_player_magick(t_data *data, double current_time);
 void								change_weapons_up(t_data *data);
