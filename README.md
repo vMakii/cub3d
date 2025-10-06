@@ -8,6 +8,7 @@ Roadmap:
 - fluid animation based on time and not fps
     * rethink the whole time struct and how its updated
     * still lots of animation depends on it (frametime particularly)
+- sword animation when walking and running
 - headbobbing
 - mana and stamina logic and bars on screen
 - change map def:

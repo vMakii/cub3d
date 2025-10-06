@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 10:59:54 by mivogel           #+#    #+#             */
-/*   Updated: 2025/09/23 11:14:11 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/10/06 15:13:17 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,8 +89,9 @@ void	render_player_casting(t_data *data)
 	}
 }
 
-void	render_player_magick(t_data *data)
+void	render_player_magick(t_data *data, double current_time)
 {
+	(void)current_time;
 	data->player.magick.casting = true;
 	render_player_casting(data);
 	if (data->player.magick.casted)

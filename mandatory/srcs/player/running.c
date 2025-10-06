@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/10 11:16:54 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/25 11:54:56 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/10/06 15:06:21 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ void	render_player_running(t_data *data, double current_time)
 	{
 		was_moving = false;
 		running_start_time = -1.0;  // Réinitialiser le timer
-		return (render_player_idle(data));
+		return (render_player_idle(data, current_time));
 	}
 	
 	// Si le joueur vient de commencer à bouger, réinitialiser le timer

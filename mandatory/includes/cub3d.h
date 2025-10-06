@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/06/24 17:27:13 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/25 14:50:07 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/10/06 15:17:26 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,9 +87,9 @@
 
 # define FOV 60
 
-# define WALK_SPEED 0.04f
+# define WALK_SPEED 0.03f
 # define TURN_SPEED 0.04f
-# define RUN_SPEED 0.08f
+# define RUN_SPEED 0.06f
 # define MARGIN 0.1f
 
 # define WALK_CYCLE_DURATION 0.8f  // Durée totale du cycle
@@ -335,14 +335,14 @@ typedef struct s_rect
 	float							height;
 }									t_rect;
 
-typedef struct s_fps
-{
-	float							current_time;
-	float							total_time;
-	float							frame_times[60];
-	int								frame_index;
-	int								frames_counted;
-}									t_fps;
+// typedef struct s_fps
+// {
+// 	float							current_time;
+// 	float							total_time;
+// 	float							frame_times[60];
+// 	int								frame_index;
+// 	int								frames_counted;
+// }									t_fps;
 
 typedef struct s_time
 {
@@ -744,7 +744,7 @@ void								calculate_new_position(t_data *data,
 
 void								init_player(t_data *data);
 void								render_player(t_data *data);
-void								render_player_idle(t_data *data);
+void								render_player_idle(t_data *data, double current_time);
 void								render_player_walking(t_data *data,
 										double current_time);
 void								render_player_running(t_data *data,
@@ -753,7 +753,7 @@ void								render_player_attacking(t_data *data,
 										double current_time);
 void								render_player_casting(t_data *data);
 void								render_spell_effect(t_data *data);
-void								render_player_magick(t_data *data);
+void								render_player_magick(t_data *data, double current_time);
 void								change_weapons_up(t_data *data);
 void								change_weapons_down(t_data *data);
 void								init_weapons(t_data *data);

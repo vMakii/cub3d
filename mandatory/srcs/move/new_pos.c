@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 19:38:07 by gburtin           #+#    #+#             */
-/*   Updated: 2025/09/23 11:14:11 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/10/06 14:34:25 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	normalize_mov(t_coord_float *move, float unit)
 void	init_speed(t_data *data, float *unit)
 {
 	if (data->player.action == RUNNING)
-		*unit = RUN_SPEED * data->time.frametime * 60.0f;
+		*unit = RUN_SPEED;
 	else
-		*unit = WALK_SPEED * data->time.frametime * 60.0f;
+		*unit = WALK_SPEED;
 }
 
 void	calculate_new_position(t_data *data, t_coord_float *move)
