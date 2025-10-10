@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:54:24 by mivogel           #+#    #+#             */
-/*   Updated: 2025/09/25 14:49:47 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/10/10 12:02:24 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,14 +66,20 @@ static void	calculate_fps(t_data *data, t_fps *fps_data)
 void	print_fps(t_data *data)
 {
 	int			current_fps;
-	static int	old_fps;
+	static int	old_fps = 0;
+	static int	update_counter = 0;
 	char		*fps;
 
 	current_fps = data->time.fps;
-	if (!old_fps)
+	update_counter++;
+	
+	// Update displayed FPS every 30 frames for more responsive display
+	if (update_counter >= 30 || old_fps == 0)
+	{
 		old_fps = current_fps;
-	if (g_frame_count % 60 == 0)
-		old_fps = current_fps;
+		update_counter = 0;
+	}
+	
 	fps = ft_itoa(old_fps);
 	mlx_string_put(data->mlx.ptr, data->mlx.win, WIN_WIDTH - 60, 20,
 		COLOR_WHITE, "FPS: ");
@@ -94,16 +100,21 @@ void	fps_counter(t_data *data)
 		fps_data.frame_index = 0;
 		fps_data.total_time = 0.0f;
 		fps_data.frames_counted = 0;
+		data->time.oldtime = get_time();
 		initialized = 1;
+		return;
 	}
-	if (g_frame_count == 120)
+	if (g_frame_count >= 120)
 		g_frame_count = 0;
 	fps_data.current_time = get_time();
 	data->time.frametime = fps_data.current_time - data->time.oldtime;
-	data->time.oldtime = fps_data.current_time;
 	data->time.time = fps_data.current_time;
-	if (data->time.frametime <= 0.000001f || data->time.frametime > 1.0f)
+	
+	// Clamp frametime to reasonable values (1-1000 FPS range)
+	if (data->time.frametime <= 0.001f || data->time.frametime > 1.0f)
 		data->time.frametime = 0.016667f;
+	
+	data->time.oldtime = fps_data.current_time;
 	update_frame_times(&fps_data, data->time.frametime);
 	calculate_fps(data, &fps_data);
 }
