@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/09 19:27:44 by gburtin           #+#    #+#             */
-/*   Updated: 2025/10/06 14:47:54 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/23 11:14:11 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,8 +65,8 @@ void	player_move(t_data *data)
 		moving_position(data, move.x, move.y);
 	}
 	if (data->keys.key_left)
-		moving_angle(&data->player, -TURN_SPEED);
+		moving_angle(&data->player, -TURN_SPEED * data->time.frametime * 66.0f);
 	if (data->keys.key_right)
-		moving_angle(&data->player, TURN_SPEED);
+		moving_angle(&data->player, TURN_SPEED * data->time.frametime * 66.0f);
 	mouse_hook(data);
 }

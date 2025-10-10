@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 12:49:42 by mivogel           #+#    #+#             */
-/*   Updated: 2025/10/06 15:12:18 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/23 11:14:11 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	render_player(t_data *data)
 	else if (data->player.action == ATTACKING)
 		render_player_attacking(data, current_time);
 	else if (data->player.action == CASTING)
-		render_player_magick(data, current_time);
+		render_player_magick(data);
 	else
-		render_player_idle(data, current_time);
+		render_player_idle(data);
 }

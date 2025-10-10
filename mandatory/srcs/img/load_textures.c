@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 14:25:26 by mivogel           #+#    #+#             */
-/*   Updated: 2025/10/06 16:48:36 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/23 11:14:11 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,14 @@ static void	load_hud(t_data *data)
 
 static void	load_room(t_data *data)
 {
-	load_img(data, &data->texture.north, "./assets/xpm/wall/down/windows1.xpm");
-	load_img(data, &data->texture.south, "./assets/xpm/wall/down/windows1.xpm");
-	load_img(data, &data->texture.west, "./assets/xpm/wall/down/normal1.xpm");
-	load_img(data, &data->texture.east, "./assets/xpm/wall/down/normal1.xpm");
-	load_img(data, &data->texture.up_north, "./assets/xpm/wall/up/windows1.xpm");
-	load_img(data, &data->texture.up_south, "./assets/xpm/wall/up/windows1.xpm");
-	load_img(data, &data->texture.up_west, "./assets/xpm/wall/up/normal1.xpm");
-	load_img(data, &data->texture.up_east, "./assets/xpm/wall/up/normal1.xpm");
+	load_img(data, &data->texture.north, "./assets/xpm/wall/down/windows.xpm");
+	load_img(data, &data->texture.south, "./assets/xpm/wall/down/windows.xpm");
+	load_img(data, &data->texture.west, "./assets/xpm/wall/down/normal.xpm");
+	load_img(data, &data->texture.east, "./assets/xpm/wall/down/normal.xpm");
+	load_img(data, &data->texture.up_north, "./assets/xpm/wall/up/windows.xpm");
+	load_img(data, &data->texture.up_south, "./assets/xpm/wall/up/windows.xpm");
+	load_img(data, &data->texture.up_west, "./assets/xpm/wall/up/normal.xpm");
+	load_img(data, &data->texture.up_east, "./assets/xpm/wall/up/normal.xpm");
 	load_img(data, &data->texture.floor, "./assets/xpm/floor/floor.xpm");
 	load_img(data, &data->texture.ceiling, "./assets/xpm/ceiling/ceiling.xpm");
 }

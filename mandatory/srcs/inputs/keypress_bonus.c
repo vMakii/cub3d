@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 11:44:24 by gburtin           #+#    #+#             */
-/*   Updated: 2025/10/06 15:29:02 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/23 13:58:40 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ int	handle_keypress(int keysym, t_data *data)
 		data->player.action = IDLE;
 	else if (keysym == XK_e && data->player.action != CASTING)
 		data->player.action = CASTING;
+	// if (keysym == XK_Control_L)
+	// 	change_weapons(data);
 	if (keysym == XK_f)
 		interact_with_door(data);
 	return (0);

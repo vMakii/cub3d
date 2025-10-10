@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 11:44:33 by gburtin           #+#    #+#             */
-/*   Updated: 2025/10/06 14:29:20 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/25 14:49:35 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,14 @@ static int	render_frame(t_data *data)
 	mlx_do_sync(data->mlx.ptr);
 	mlx_put_image_to_window(data->mlx.ptr, data->mlx.win, data->frame.image, 0,
 		0);
+	print_fps(data);
 	mlx_destroy_image(data->mlx.ptr, data->frame.image);
 	return (0);
 }
 
 int	loop(t_data *data)
 {
-	// fps_counter(data);
+	fps_counter(data);
 	// update_time(data);
 	player_move(data);
 	update_doors(data);

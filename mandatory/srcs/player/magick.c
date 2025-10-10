@@ -6,7 +6,7 @@
 /*   By: mivogel <mivogel@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/22 10:59:54 by mivogel           #+#    #+#             */
-/*   Updated: 2025/10/06 17:50:04 by mivogel          ###   ########.fr       */
+/*   Updated: 2025/09/23 11:14:11 by mivogel          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,12 +64,11 @@ void	define_offset(t_data *data, int *offset, int *dir)
 	}
 }
 
-void	render_player_casting(t_data *data, double current_time)
+void	render_player_casting(t_data *data)
 {
 	static int	offset = 0;
 	static int	dir = 1;
 
-	(void)current_time;
 	if (g_frame_count % 5 == 0)
 	{
 		update_casting_animation(data);
@@ -90,10 +89,10 @@ void	render_player_casting(t_data *data, double current_time)
 	}
 }
 
-void	render_player_magick(t_data *data, double current_time)
+void	render_player_magick(t_data *data)
 {
 	data->player.magick.casting = true;
-	render_player_casting(data, current_time);
+	render_player_casting(data);
 	if (data->player.magick.casted)
 		render_spell_effect(data);
 }
